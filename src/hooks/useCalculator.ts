@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type {CalculatorState, Operator } from "../types/calculator";
+import type{ CalculatorState, Operator } from "../types/calculator";
 
 export default function useCalculator() {
   const [state, setState] = useState<CalculatorState>({
@@ -23,11 +23,41 @@ export default function useCalculator() {
   };
 
   const chooseOperator = (op: Operator) => {
-    setState((s) => ({
-      previous: s.current,
-      current: "0",
-      operator: op,
-    }));
+    setState((s) => {
+      if (s.previous && s.operator) {
+        // Compute previous operation first
+        const prev = parseFloat(s.previous);
+        const curr = parseFloat(s.current);
+        let result = 0;
+
+        switch (s.operator) {
+          case "+":
+            result = prev + curr;
+            break;
+          case "-":
+            result = prev - curr;
+            break;
+          case "*":
+            result = prev * curr;
+            break;
+          case "/":
+            result = curr === 0 ? 0 : prev / curr;
+            break;
+        }
+
+        return {
+          previous: String(result),
+          current: "0",
+          operator: op,
+        };
+      }
+
+      return {
+        previous: s.current,
+        current: "0",
+        operator: op,
+      };
+    });
   };
 
   const clear = () => {
@@ -66,8 +96,6 @@ export default function useCalculator() {
         case "/":
           result = curr === 0 ? 0 : prev / curr;
           break;
-        default:
-          result = curr;
       }
 
       return {

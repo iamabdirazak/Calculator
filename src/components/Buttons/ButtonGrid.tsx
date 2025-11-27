@@ -1,10 +1,11 @@
 import Button from "./Button";
 import "./ButtonGrid.css";
+import type Operator from ".../types/calculator";
 
 interface Props {
   onDigit: (d: string) => void;
   onDot: () => void;
-  onOperator: (op: string) => void;
+  onOperator: (op: Operator) => void;
   onClear: () => void;
   onDelete: () => void;
   onEqual: () => void;
