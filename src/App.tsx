@@ -1,16 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Display from "./components/Display/Display";
+import ButtonGrid from "./components/Buttons/ButtonGrid";
+import useCalculator from "./hooks/useCalculator";
+import "./index.css";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const {
+    state,
+    inputDigit,
+    inputDot,
+    chooseOperator,
+    clear,
+    del,
+    calculate,
+  } = useCalculator();
 
   return (
-    <>
-      <img src="/calculator.png" className="logo" alt="Calculator logo" />
-    </>
-  )
+    <div className="app">
+      <Display value={state.current} />
+      <ButtonGrid
+        onDigit={inputDigit}
+        onDot={inputDot}
+        onOperator={chooseOperator}
+        onClear={clear}
+        onDelete={del}
+        onEqual={calculate}
+      />
+    </div>
+  );
 }
-
-export default App

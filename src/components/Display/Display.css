@@ -1,0 +1,14 @@
+.display {
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 2rem;
+  background: #141414;
+  color: #fff;
+  text-align: right;
+  border-radius: 15px;
+}
+
+.result {
+  padding: 0 10px;
+  overflow-x: auto;
+}
