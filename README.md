@@ -6,14 +6,14 @@ The interface displays the current input, the previously entered value, and the 
 All calculator logic is handled through a dedicated state hook for clarity and separation of concerns.
 
 ## Features
-	•	Number input (0–9)
-	•	Decimal input
-	•	Basic operators: +, -, *, /
-	•	Clear current state
-	•	Delete last digit
-	•	Evaluate the current expression
+- Number input (0–9)
+Decimal input
+Basic operators: +, -, *, /
+Clear current state
+Delete last digit
+Evaluate the current expression
 
 ## Tech Stack
-	•	React
-	•	TypeScript
-	•	Vite
+React
+TypeScript
+Vite

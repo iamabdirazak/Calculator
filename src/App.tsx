@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      
+      <img src="/calculator.png" className="logo" alt="Calculator logo" />
     </>
   )
 }
