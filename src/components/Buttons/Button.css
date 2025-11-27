@@ -5,14 +5,31 @@
   background: #454545;
   border-radius: 15px;
   cursor: pointer;
-  
+}
+
+.btn:hover {
+  background: #5a5a5a;
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
 
 .btn.operator {
   background: #ff9f0a;
   color: white;
+  grid-column: 4;
+}
+
+.btn.operator:hover {
+  background: #ffb347;
 }
 
 .btn.action {
-  background: #4a4a4a;
+  background: #454545;
 }
+
+.btn.action:hover {
+  background: #5a5a5a;
+}
+
