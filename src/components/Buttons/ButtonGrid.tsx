@@ -21,8 +21,6 @@ export default function ButtonGrid({
 }: Props) {
   return (
     <div className="grid">
-      
-
       <Button label="7" onClick={() => onDigit("7")} />
       <Button label="8" onClick={() => onDigit("8")} />
       <Button label="9" onClick={() => onDigit("9")} />
